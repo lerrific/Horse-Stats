@@ -2,9 +2,9 @@ modLoader="javafml"
 loaderVersion="[30,)"
 [[mods]] 
 modId="horsestats" 
-version="1.0.0" 
+version="1.0.1" 
 displayName="Horse Stats" 
 authors="lerrific" 
 description='''
-A simple mod that allows you to shift right click (empty handed) on a horse to see it's stats.
+A simple mod that allows you to shift right click (with a stick) on a horse to see it's stats.
 '''

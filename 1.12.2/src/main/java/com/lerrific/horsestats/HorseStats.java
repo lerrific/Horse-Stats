@@ -5,16 +5,14 @@ import net.minecraft.entity.passive.AbstractHorse;
 import net.minecraft.entity.passive.EntityLlama;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Items;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.EntityInteract;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.eventhandler.Event.Result;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
-@Mod(modid = "horsestats", name = "Horse Stats", version = "1.0.0")
+@Mod(modid = "horsestats", name = "Horse Stats", version = "1.0.1")
 public class HorseStats {
 
 	public HorseStats() {
@@ -27,8 +25,6 @@ public class HorseStats {
 			EntityPlayer player = event.getEntityPlayer();
 			AbstractHorse horseEntity = (AbstractHorse) event.getTarget();
 			if (player.isSneaking() && player.getHeldItemMainhand().getItem() == Items.STICK) {
-				event.setResult(Result.DENY);
-				event.setCanceled(true); // Don't access the horse's inventory
 				TextFormatting colourHealth = TextFormatting.WHITE;
 				TextFormatting colourSpeed = TextFormatting.WHITE;
 				TextFormatting colourJump = TextFormatting.WHITE;

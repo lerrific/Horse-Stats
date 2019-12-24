@@ -1,11 +1,10 @@
 package com.lerrific.horsestats;
 
-import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.passive.horse.AbstractHorseEntity;
 import net.minecraft.entity.passive.horse.LlamaEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.util.text.TextFormatting;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.common.MinecraftForge;
@@ -25,8 +24,7 @@ public class HorseStats {
 		if (event.getPlayer() != null && event.getWorld() != null && event.getTarget() instanceof AbstractHorseEntity) {
 			PlayerEntity player = event.getPlayer();
 			AbstractHorseEntity horseEntity = (AbstractHorseEntity) event.getTarget();
-			if (player.isSneaking() && player.getHeldItemMainhand() == ItemStack.EMPTY) {
-				event.setCanceled(true); // Don't access the horse's inventory
+			if (player.isSneaking() && player.getHeldItemMainhand().getItem() == Items.STICK) {
 				TextFormatting colourHealth = TextFormatting.WHITE;
 				TextFormatting colourSpeed = TextFormatting.WHITE;
 				TextFormatting colourJump = TextFormatting.WHITE;
